@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/main.min.css" />
+    <script src="./js/app.js" type="module"></script>
+    <title>Carli's Shoppe</title>
+  </head>
+  <body>
+      <header class="header">
+        <span class="header__icon">
+          <a href="#"><i class="fab fa-facebook-f"></i></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </span>
+        <span class="header__body">
+          <span><i class="far fa-clock"></i></span>
+          <span>Hours: Sunday & Monday 8:00 a.m. - 4:00 p.m. | Tuesday - Saturday 7:00 a.m. - 6:00 p.m</span>
+        </span>
+      </header>
+      <nav class="navbar">
+        <div class="navbar-container">
+          <span class="navbar__logo">Carli's Shoppe</span>
+          <span class="hamburger">
+            <i class="fas fa-bars fa-2x"></i>
+          </span>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Shop</a></li>
+          </ul>
+          <div class="shopping-cart-div">
+            <span class="small-circle-quantity">0</span>
+            <button class="shopping-cart-button navbar__shopping-cart"><i class="fas fa-shopping-cart"></i></button>
+          </div>
+        </div>
+      </nav>
+      <nav class="mobile-nav-menu">
+        <ul>
+          <li><a class="mobile-link-js" href="#">Home</a></li>
+          <li><a class="mobile-link-js" href="#">Shop</a></li>
+        </ul>
+      </nav>
+      <main>
+        <section>
+          <div class="cards">
+            <!-- <article class="card">
+              <div class="card__figure">
+                <img
+                  src="https://source.unsplash.com/vj0Rh5iTwgM/640x426"
+                  alt=""
+                />
+              </div>
+              <div class="card__body">
+                <span class="card__title">Product Title</span>
+                <span>$9.99</span>
+                <button class="btn">Purchase</button>
+              </div>
+            </article> -->
+          </div>
+        </section>
+        <div class="modal hidden">
+          <div class="move-btn-right">
+            <button class="close-btn">&times;</button>
+          </div>
+          <p class="modal__title">Order Summary </p>
+          <!-- <article class="modal__item">
+            <div class="modal__figure">
+              <img src="https://source.unsplash.com/vj0Rh5iTwgM/640x426" alt="">
+            </div>
+            <div class="modal__body">
+              <span class="modal__product-name">Belgium Sunday Cake</span>
+              <span class="modal__product-price">$13.99</span>
+              <div class="modal__qty-btn-container">
+                <input class="modal__input-qty" type="number" min="0" max="50">
+                <span><button class="close-btn">&times;</button></span>
+              </div>
+            </div>
+          </article>
+          <article class="modal__item">
+            <div class="modal__figure">
+              <img src="https://source.unsplash.com/vj0Rh5iTwgM/640x426" alt="">
+            </div>
+            <div class="modal__body">
+              <span class="modal__product-name">Belgium Sunday Cake</span>
+              <span class="modal__product-price">$13.99</span>
+              <div class="modal__qty-btn-container">
+                <input class="modal__input-qty" type="number" min="0" max="50">
+                <span><button class="close-btn">&times;</button></span>
+              </div>
+            </div>
+          </article> -->
+          <div class="cart-empty-message">
+            <p>You're cart is empty!</p>
+          </div>
+          <div class="total">
+            <span>Total: $</span>
+            <span class="total__price-js">0.00</span>
+            <button class="btn top-margin">Purchase</button>
+          </div>
+        </div>
+        <div class="overlay hidden"></div>
+      </main>
+      <nav class="bottom-navbar">
+        <div class="bottom-navbar-container">
+          <a href="#"><i class="fas fa-home"></i></a>
+          <a href="#"><i class="fas fa-store"></i></a>
+          <div>
+            <span class="small-circle-quantity">0</span>
+            <button class="shopping-cart-button"><i class="fas fa-shopping-cart"></i></button>
+          </div>
+        </div>
+      </nav>
+      <footer style="background-color: green;">this  is the footer</footer>
+  </body>
+</html>

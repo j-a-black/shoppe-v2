@@ -1,0 +1,31 @@
+.header {
+  width: 100%;
+  height: 60px;
+  background-image: url("https://source.unsplash.com/ARBBUlj-6Es/2400x1603");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-bottom: 1px solid black;
+  color: $smoke-white;
+  display: none;
+
+  .header__icon {
+    width: 100px;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      color: $smoke-white;
+      display: inline-block;
+    }
+  }
+}
+
+@media screen and (min-width: 870px) {
+  .header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
