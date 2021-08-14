@@ -72,3 +72,5 @@ export const data = [
     qty: 1,
   },
 ];
+
+export const cartArr = [];

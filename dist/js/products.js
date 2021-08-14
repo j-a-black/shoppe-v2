@@ -1,4 +1,6 @@
-export const render = (data) => {
+import { cartArr } from "./data.js";
+
+export const displayProductsInDOM = (data) => {
   let cards = document.querySelector(".cards");
 
   data.forEach((data) => {
@@ -23,23 +25,20 @@ export const render = (data) => {
   });
 };
 
-let cartArr = [];
-export const addToCart = (e) => {
+// let cartArr = [];
+export const addToCartBtnClicked = (e) => {
+  let button = e.target;
+  let product = button.parentElement.parentElement;
+  let productId = product.getAttribute("id");
+  let productImageSrc = product.querySelector("img").src;
+  let productName = product.querySelector(".card__title").innerText;
+  let productPrice = product
+    .querySelector(".card__price-js")
+    .innerText.slice(1);
+  productPrice = parseFloat(productPrice);
+  let productQty = product.querySelector(".item-qty-js").innerText;
+  productQty = parseInt(productQty);
   if (e.target.className === "btn add-to-cart-js") {
-    let button = e.target;
-    let product = button.parentElement.parentElement;
-    // console.log(product);
-    let productId = product.getAttribute("id");
-    let productImageSrc = product.querySelector("img").src;
-    let productName = product.querySelector(".card__title").innerText;
-    let productPrice = product
-      .querySelector(".card__price-js")
-      .innerText.slice(1);
-    productPrice = parseFloat(productPrice);
-    let productQty = product.querySelector(".item-qty-js").innerText;
-    productQty = parseInt(productQty);
-    // console.log(productQty);
-
     addToCartArr(
       productId,
       productImageSrc,
@@ -47,32 +46,6 @@ export const addToCart = (e) => {
       productPrice,
       productQty
     );
-    // console.log(cartArr);
-
-    /*
-    ////////////////////////////////////////////////////////////////////
-    let productObj = {
-      productId,
-      productImageSrc,
-      productName,
-      productPrice,
-      productQty,
-    };
-    // if the array is empty, will add new object
-    if (cartArr.length < 1) {
-      cartArr.push(productObj);
-    }
-    // will check if product being added to array already exsist
-    let foundItem = cartArr.some(
-      (item) => item.productId === productObj.productId
-    );
-    // if not found, then push object into array
-    if (!foundItem) cartArr.push(productObj);
-
-    // console.log(cartArr);
-    updateCartDisplay(cartArr);
-    ////////////////////////////////////////////////////////////////////
-    */
   }
 };
 
@@ -138,10 +111,4 @@ const displayCart = (arr) => {
 
   products.innerHTML = html;
   console.log(cartArr);
-  // updateCartArrQty(arr);
-};
-
-const updateCartArrQty = (arr) => {
-  const displayedProducts = products.querySelectorAll(".modal__item");
-  console.log(displayedProducts);
 };

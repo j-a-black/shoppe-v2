@@ -1,12 +1,13 @@
 "use strict";
 
 import { data } from "./data.js";
-import { render, addToCart } from "./products.js";
+import { displayProductsInDOM, addToCartBtnClicked } from "./products.js";
 import { toggleMobileNavBtnAndMenu } from "./navbar.js";
 import {
   openShoppingCart,
   closeShoppingCart,
   pressEscToCloseCart,
+  handleCartChange,
 } from "./modal.js";
 
 // Wait until DOM is loaded before starting app
@@ -17,10 +18,10 @@ document.addEventListener("readystatechange", (e) => {
 });
 
 function initApp() {
-  render(data);
+  displayProductsInDOM(data);
   // Event delegation for dynamically created products
   const gridDiv = document.querySelector(".cards");
-  gridDiv.addEventListener("click", addToCart);
+  gridDiv.addEventListener("click", addToCartBtnClicked);
   // Mobile nav button to open/close mobile menu
   const hamburger = document.querySelector(".hamburger");
   hamburger.addEventListener("click", toggleMobileNavBtnAndMenu);
@@ -36,4 +37,6 @@ function initApp() {
   const overlay = document.querySelector(".overlay");
   overlay.addEventListener("click", closeShoppingCart);
   pressEscToCloseCart();
+  const cartDisplay = document.querySelector(".products-js");
+  cartDisplay.addEventListener("change", handleCartChange);
 }

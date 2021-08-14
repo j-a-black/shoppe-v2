@@ -1,3 +1,5 @@
+import { cartArr } from "./data.js";
+
 const shoppingCart = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 
@@ -22,4 +24,32 @@ export const pressEscToCloseCart = () => {
       closeShoppingCart();
     }
   });
+};
+
+const products = document.querySelector(".products-js");
+export const handleCartChange = (e) => {
+  if (e.target.classList.contains("modal__input-qty")) {
+    let qtyElement = e.target;
+    let updatedQtyValue = parseInt(qtyElement.value);
+    let idDiv = qtyElement.parentElement.parentElement.parentElement;
+
+    cartArr.forEach((item) => {
+      if (idDiv.getAttribute("id") === item.productId) {
+        item.productQty = updatedQtyValue;
+      }
+    });
+  }
+
+  updateTotalPrice();
+};
+
+const updateTotalPrice = () => {
+  // let totalPriceElements = products.querySelectorAll(".modal__input-qty");
+  // totalPriceElements.forEach((el) => console.log(el));
+  const totalPriceElement = document.querySelector(".total__price-js");
+  let total = 0;
+  cartArr.forEach((item) => {
+    total += item.productQty * item.productPrice;
+  });
+  totalPriceElement.innerText = total.toFixed(2);
 };
