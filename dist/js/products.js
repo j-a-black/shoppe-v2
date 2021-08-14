@@ -102,7 +102,7 @@ const displayCart = (arr) => {
           <span class="modal__product-price">$${el.productPrice}</span>
           <div class="modal__qty-btn-container">
             <input id=${el.productId} class="modal__input-qty" type="number" value="${el.productQty}" min="1" max="50">
-            <span><button class="close-btn">&times;</button></span>
+            <span><button class="close-btn item-js">&times;</button></span>
           </div>
         </div>
       </article>
@@ -111,4 +111,20 @@ const displayCart = (arr) => {
 
   products.innerHTML = html;
   console.log(cartArr);
+  updateTotalPrice();
+};
+
+const updateTotalPrice = () => {
+  const totalPriceElement = document.querySelector(".total__price-js");
+  const cartIconQtyDisplay = document.querySelectorAll(
+    ".small-circle-quantity"
+  );
+  let total = 0;
+  let totalQty = 0;
+  cartArr.forEach((item) => {
+    total += item.productQty * item.productPrice;
+    totalQty += item.productQty;
+  });
+  totalPriceElement.innerText = total.toFixed(2);
+  cartIconQtyDisplay.forEach((el) => (el.innerText = totalQty));
 };

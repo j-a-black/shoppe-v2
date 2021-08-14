@@ -8,6 +8,7 @@ import {
   closeShoppingCart,
   pressEscToCloseCart,
   handleCartChange,
+  removeProductBtnClicked,
 } from "./modal.js";
 
 // Wait until DOM is loaded before starting app
@@ -39,4 +40,5 @@ function initApp() {
   pressEscToCloseCart();
   const cartDisplay = document.querySelector(".products-js");
   cartDisplay.addEventListener("change", handleCartChange);
+  cartDisplay.addEventListener("click", removeProductBtnClicked);
 }

@@ -44,12 +44,21 @@ export const handleCartChange = (e) => {
 };
 
 const updateTotalPrice = () => {
-  // let totalPriceElements = products.querySelectorAll(".modal__input-qty");
-  // totalPriceElements.forEach((el) => console.log(el));
   const totalPriceElement = document.querySelector(".total__price-js");
+  const cartIconQtyDisplay = document.querySelectorAll(
+    ".small-circle-quantity"
+  );
   let total = 0;
+  let totalQty = 0;
   cartArr.forEach((item) => {
     total += item.productQty * item.productPrice;
+    totalQty += item.productQty;
   });
   totalPriceElement.innerText = total.toFixed(2);
+  cartIconQtyDisplay.forEach((el) => (el.innerText = totalQty));
+};
+
+export const removeProductBtnClicked = () => {
+  const removeBtns = document.querySelectorAll(".close-btn.item-js");
+  console.log(removeBtns);
 };
