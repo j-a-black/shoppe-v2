@@ -1,7 +1,7 @@
 "use strict";
 
 import { data } from "./data.js";
-import { render, handleClick } from "./products.js";
+import { render, addToCart } from "./products.js";
 import { toggleMobileNavBtnAndMenu } from "./navbar.js";
 import {
   openShoppingCart,
@@ -20,7 +20,7 @@ function initApp() {
   render(data);
   // Event delegation for dynamically created products
   const gridDiv = document.querySelector(".cards");
-  gridDiv.addEventListener("click", handleClick);
+  gridDiv.addEventListener("click", addToCart);
   // Mobile nav button to open/close mobile menu
   const hamburger = document.querySelector(".hamburger");
   hamburger.addEventListener("click", toggleMobileNavBtnAndMenu);
