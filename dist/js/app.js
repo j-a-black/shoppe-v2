@@ -20,10 +20,29 @@ document.addEventListener("readystatechange", (e) => {
 });
 
 function initApp() {
-  displayProductsInDOM(data);
-  // Event delegation for dynamically created products
-  const gridDiv = document.querySelector(".cards");
-  gridDiv.addEventListener("click", addToCartBtnClicked);
+  const cards = document.querySelector(".cards");
+  if (cards) {
+    displayProductsInDOM(data);
+    // Event delegation for dynamically created products
+    const gridDiv = document.querySelector(".cards");
+    gridDiv.addEventListener("click", addToCartBtnClicked);
+    // close button on modal/checkout window
+    const closeShoppingCartBtn = document.querySelector(".close-btn");
+    closeShoppingCartBtn.addEventListener("click", closeShoppingCart);
+    // listens for changes in input field
+    const cartDisplay = document.querySelector(".products-js");
+    cartDisplay.addEventListener("change", handleCartChange);
+    // Removes item from cart
+    const products = document.querySelector(".products-js");
+    products.addEventListener("click", removeProductBtnClicked);
+    // clear cart when purchase btn is clicked
+    const purchaseBtn = document.querySelector(".purchase-js");
+    purchaseBtn.addEventListener("click", clearCartAfterPurchase);
+    // click on overlay to close checkout window/modal
+    const overlay = document.querySelector(".overlay");
+    overlay.addEventListener("click", closeShoppingCart);
+    pressEscToCloseCart();
+  }
   // Mobile nav button to open/close mobile menu
   const hamburger = document.querySelector(".hamburger");
   hamburger.addEventListener("click", toggleMobileNavBtnAndMenu);
@@ -32,20 +51,4 @@ function initApp() {
   shoppingCartBtns.forEach((btn) => {
     btn.addEventListener("click", openShoppingCart);
   });
-  // close button on modal/checkout window
-  const closeShoppingCartBtn = document.querySelector(".close-btn");
-  closeShoppingCartBtn.addEventListener("click", closeShoppingCart);
-  // click on overlay to close checkout window/modal
-  const overlay = document.querySelector(".overlay");
-  overlay.addEventListener("click", closeShoppingCart);
-  pressEscToCloseCart();
-  // listens for changes in input field
-  const cartDisplay = document.querySelector(".products-js");
-  cartDisplay.addEventListener("change", handleCartChange);
-  // Removes item from cart
-  const products = document.querySelector(".products-js");
-  products.addEventListener("click", removeProductBtnClicked);
-  // clear cart when purchase btn is clicked
-  const purchaseBtn = document.querySelector(".purchase-js");
-  purchaseBtn.addEventListener("click", clearCartAfterPurchase);
 }

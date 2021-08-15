@@ -16,98 +16,61 @@
     <title>Carli's Shoppe</title>
   </head>
   <body>
-      <header class="header">
-        <span class="header__icon">
-          <a href="#"><i class="fab fa-facebook-f"></i></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
+    <header class="header">
+      <span class="header__icon">
+        <a href="#"><i class="fab fa-facebook-f"></i></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </span>
+      <span class="header__body">
+        <span><i class="far fa-clock"></i></span>
+        <span>Hours: Sunday & Monday 8:00 a.m. - 4:00 p.m. | Tuesday - Saturday 7:00 a.m. - 6:00 p.m</span>
+      </span>
+    </header>
+    <nav class="navbar">
+      <div class="navbar-container">
+        <span class="navbar__logo">Carli's Shoppe</span>
+        <span class="hamburger">
+          <i class="fas fa-bars fa-2x"></i>
         </span>
-        <span class="header__body">
-          <span><i class="far fa-clock"></i></span>
-          <span>Hours: Sunday & Monday 8:00 a.m. - 4:00 p.m. | Tuesday - Saturday 7:00 a.m. - 6:00 p.m</span>
-        </span>
-      </header>
-      <nav class="navbar">
-        <div class="navbar-container">
-          <span class="navbar__logo">Carli's Shoppe</span>
-          <span class="hamburger">
-            <i class="fas fa-bars fa-2x"></i>
-          </span>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Shop</a></li>
-          </ul>
-          <div class="shopping-cart-div">
-            <span class="small-circle-quantity">0</span>
-            <button class="shopping-cart-button navbar__shopping-cart"><i class="fas fa-shopping-cart"></i></button>
-          </div>
-        </div>
-      </nav>
-      <nav class="mobile-nav-menu">
         <ul>
-          <li><a class="mobile-link-js" href="#">Home</a></li>
-          <li><a class="mobile-link-js" href="#">Shop</a></li>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./store.html">Shop</a></li>
         </ul>
-      </nav>
-      <main>
-        <section>
-          <div class="cards">
-            <!-- <article class="card">
-              <div class="card__figure">
-                <img
-                  src="https://source.unsplash.com/vj0Rh5iTwgM/640x426"
-                  alt=""
-                />
-              </div>
-              <div class="card__body">
-                <span class="card__title">Product Title</span>
-                <span>$9.99</span>
-                <button class="btn">Purchase</button>
-              </div>
-            </article> -->
-          </div>
-        </section>
-        <div class="modal hidden">
-          <div class="move-btn-right">
-            <button class="close-btn">&times;</button>
-          </div>
-          <p class="modal__title">Order Summary </p>
-          <div class="products-js">
-            <!-- <article class="modal__item">
-              <div class="modal__figure">
-                <img src="https://source.unsplash.com/vj0Rh5iTwgM/640x426" alt="">
-              </div>
-              <div class="modal__body">
-                <span class="modal__product-name">Belgium Sunday Cake</span>
-                <span class="modal__product-price">$13.99</span>
-                <div class="modal__qty-btn-container">
-                  <input class="modal__input-qty" type="number" min="0" max="50">
-                  <span><button class="close-btn">&times;</button></span>
-                </div>
-              </div>
-            </article> -->
-          </div>
-          <div class="cart-empty-message">
-            <p>You're cart is empty!</p>
-          </div>
-          <div class="total">
-            <span>Total: $</span>
-            <span class="total__price-js">0.00</span>
-            <button class="btn top-margin purchase-js">Purchase</button>
-          </div>
+        <div class="shopping-cart-div">
+          <span class="small-circle-quantity">0</span>
+          <button class="shopping-cart-button navbar__shopping-cart"><i class="fas fa-shopping-cart"></i></button>
         </div>
-        <div class="overlay hidden"></div>
-      </main>
-      <nav class="bottom-navbar">
-        <div class="bottom-navbar-container">
-          <a href="#"><i class="fas fa-home"></i></a>
-          <a href="#"><i class="fas fa-store"></i></a>
-          <div>
-            <span class="small-circle-quantity">0</span>
-            <button class="shopping-cart-button"><i class="fas fa-shopping-cart"></i></button>
-          </div>
+      </div>
+    </nav>
+    <nav class="mobile-nav-menu">
+      <ul>
+        <li><a class="mobile-link-js" href="./index.html">Home</a></li>
+        <li><a class="mobile-link-js" href="./store.html">Shop</a></li>
+      </ul>
+    </nav>
+    <div class="hero">
+        <div class="hero__text">
+            <div class="hero__text-1">
+                <div>dessert</div>
+                <p>def./<br>a usually sweet course or dish (as of pastry or ice cream) usually served at the end of a meal</p></br>
+                <a href="#" class="btn">Shop Now</a>
+            </div>
         </div>
-      </nav>
-      <footer style="background-color: green;">this  is the footer</footer>
-  </body>
+    </div>
+    <main>
+      main section
+    <nav class="bottom-navbar">
+      <div class="bottom-navbar-container">
+        <a href="./index.html"><i class="fas fa-home"></i></a>
+        <a href="./store.html"><i class="fas fa-store"></i></a>
+        <div>
+          <span class="small-circle-quantity">0</span>
+          <button class="shopping-cart-button"><i class="fas fa-shopping-cart"></i></button>
+        </div>
+      </div>
+    </nav>
+    <footer style="background-color: green;">this  is the footer</footer>
+    <div class="buffer-for-bottom-navbar"></div>
+</body>
 </html>

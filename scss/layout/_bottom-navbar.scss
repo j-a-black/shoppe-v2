@@ -32,8 +32,13 @@
   }
 }
 
-// @media screen and (min-width: 870px) {
-//   .bottom-navbar {
-//     display: none;
-//   }
-// }
+.buffer-for-bottom-navbar {
+  height: 60px;
+}
+
+@media screen and (min-width: 870px) {
+  .bottom-navbar,
+  .buffer-for-bottom-navbar {
+    display: none;
+  }
+}
