@@ -42,5 +42,4 @@ function initApp() {
   cartDisplay.addEventListener("change", handleCartChange);
   const products = document.querySelector(".products-js");
   products.addEventListener("click", removeProductBtnClicked);
-  // const removeBtns = products.querySelectorAll(".close-btn.item-js");
 }

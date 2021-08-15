@@ -90,6 +90,12 @@ const displayCart = (arr) => {
   });
 
   products.innerHTML = html;
+  const emptyCartMsg = document.querySelector(".cart-empty-message");
+  if (cartArr.length) {
+    emptyCartMsg.style.display = "none";
+  } else {
+    emptyCartMsg.style.display = "block";
+  }
   console.log(cartArr);
   updateTotalPrice();
 };
