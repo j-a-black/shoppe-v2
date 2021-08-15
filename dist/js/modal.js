@@ -58,7 +58,38 @@ const updateTotalPrice = () => {
   cartIconQtyDisplay.forEach((el) => (el.innerText = totalQty));
 };
 
-export const removeProductBtnClicked = () => {
-  const removeBtns = document.querySelectorAll(".close-btn.item-js");
-  console.log(removeBtns);
+export const removeProductBtnClicked = (e) => {
+  let btnId = e.target.id;
+  for (let i = cartArr.length - 1; i >= 0; i--) {
+    if (cartArr[i].productId === btnId) {
+      cartArr.splice(i, 1);
+    }
+  }
+  console.log(cartArr);
+  displayCart(cartArr);
+};
+
+const displayCart = (arr) => {
+  let html = "";
+  arr.forEach((el) => {
+    html += `
+      <article id=${el.productId} class="modal__item">
+        <div class="modal__figure">
+          <img src="${el.productImageSrc}" alt="${el.productName}">
+        </div>
+        <div class="modal__body">
+          <span class="modal__product-name">${el.productName}</span>
+          <span class="modal__product-price">$${el.productPrice}</span>
+          <div class="modal__qty-btn-container">
+            <input class="modal__input-qty" type="number" value="${el.productQty}" min="1" max="50">
+            <span><button id=${el.productId} class="close-btn item-js">&times;</button></span>
+          </div>
+        </div>
+      </article>
+  `;
+  });
+
+  products.innerHTML = html;
+  console.log(cartArr);
+  updateTotalPrice();
 };

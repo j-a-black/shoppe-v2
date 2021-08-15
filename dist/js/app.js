@@ -40,5 +40,7 @@ function initApp() {
   pressEscToCloseCart();
   const cartDisplay = document.querySelector(".products-js");
   cartDisplay.addEventListener("change", handleCartChange);
-  cartDisplay.addEventListener("click", removeProductBtnClicked);
+  const products = document.querySelector(".products-js");
+  products.addEventListener("click", removeProductBtnClicked);
+  // const removeBtns = products.querySelectorAll(".close-btn.item-js");
 }
