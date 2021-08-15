@@ -37,7 +37,7 @@
           <li><a href="./index.html">Home</a></li>
           <li><a href="./store.html">Shop</a></li>
         </ul>
-        <div class="shopping-cart-div">
+        <div class="shopping-cart-div" style="visibility: hidden">
           <span class="small-circle-quantity">0</span>
           <button class="shopping-cart-button navbar__shopping-cart"><i class="fas fa-shopping-cart"></i></button>
         </div>
@@ -54,23 +54,74 @@
             <div class="hero__text-1">
                 <div>dessert</div>
                 <p>def./<br>a usually sweet course or dish (as of pastry or ice cream) usually served at the end of a meal</p></br>
-                <a href="#" class="btn">Shop Now</a>
+                <a href="./store.html" class="btn">Shop Now</a>
             </div>
         </div>
     </div>
     <main>
-      main section
+        <section>
+            <div class="text-data">
+                <h2 class="text-data__title">Confections You Grew Up With</h2>
+                <p>Carli’s Shoppe is a bakery and retail store in Seattle, Washington, where you can enjoy a selection of traditional and international style confections made from scratch. Order on the spot, or online for takeout!</p>
+            </div>
+        </section>
+        <section>
+            <div class="pic-container">
+                <div class="pic__textbox">
+                  <h2>subscribe to the seaside catering</h2>
+                  <form class="pic__form">
+                    <div>
+                      <i class="fas fa-user-alt"></i>
+                      <input
+                        class="input-field"
+                        type="text"
+                        placeholder="Name"
+                        maxlength="50"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <i class="fas fa-envelope"></i>
+                      <input
+                        class="input-field"
+                        type="email"
+                        maxlength="75"
+                        placeholder="Email Address"
+                        required
+                      />
+                    </div>
+                    <input type="submit" class="btn" />
+                  </form>
+                </div>
+              </div>
+        </section>
+    </main>
     <nav class="bottom-navbar">
       <div class="bottom-navbar-container">
         <a href="./index.html"><i class="fas fa-home"></i></a>
         <a href="./store.html"><i class="fas fa-store"></i></a>
-        <div>
+        <div style="visibility: hidden">
           <span class="small-circle-quantity">0</span>
           <button class="shopping-cart-button"><i class="fas fa-shopping-cart"></i></button>
         </div>
       </div>
     </nav>
-    <footer style="background-color: green;">this  is the footer</footer>
+    <footer class="footer">
+        <div class="footer_textbox">
+          <h3>Carli's Shop | Bakery for defined tastes</h3>
+          <div class="footer_icons">
+            <a href="https://www.facebook.com/" target="_blank"
+              ><i class="fab fa-facebook-f fa-lg"></i
+            ></a>
+            <a href="https://www.linkedin.com/" target="_blank"
+              ><i class="fab fa-linkedin-in fa-lg"></i
+            ></a>
+            <a href="https://www.instagram.com/" target="_blank"
+              ><i class="fab fa-instagram fa-lg"></i
+            ></a>
+          </div>
+        </div>
+      </footer>
     <div class="buffer-for-bottom-navbar"></div>
 </body>
 </html>

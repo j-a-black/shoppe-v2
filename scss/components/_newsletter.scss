@@ -1,0 +1,102 @@
+.pic-container {
+  padding: 5px;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 50vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://source.unsplash.com/Xaanw0s0pMk/2400x1589");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.pic__textbox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  color: $smoke-white;
+
+  h2 {
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-bottom: 3rem;
+  }
+
+  .pic__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+
+    div {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .input-field {
+      background-color: transparent;
+      margin: 0 1rem 1.2rem 0.5rem;
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      color: $smoke-white;
+      border: none;
+      border-bottom: 1px solid $smoke-white;
+    }
+
+    ::placeholder {
+      color: $smoke-white;
+    }
+  }
+}
+
+.no-bkg-pic {
+  background-image: none;
+}
+
+.form {
+  width: 100%;
+  max-width: 768px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.alt-input-field {
+  width: 100%;
+  max-width: 768px;
+  height: auto;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+  background-color: transparent;
+  padding: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.textarea-input-field {
+  width: 100%;
+  max-width: 768px;
+  height: auto;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+  background-color: transparent;
+  padding: 0.3rem;
+  margin-bottom: 1rem;
+  font-family: $montserrat;
+}
+
+.textarea-input-field::placeholder {
+  font-family: $montserrat;
+}
