@@ -14,7 +14,7 @@ export const displayCart = () => {
             <span class="modal__product-name">${el.productName}</span>
             <span class="modal__product-price">$${el.productPrice}</span>
             <div class="modal__qty-btn-container">
-              <input class="modal__input-qty" type="number" value="${el.productQty}" min="1" max="50">
+              <span>Qty: </span><input class="modal__input-qty" type="number" value="${el.productQty}" min="1" max="50">
               <span><button id=${el.productId} class="close-btn item-js">&times;</button></span>
             </div>
           </div>

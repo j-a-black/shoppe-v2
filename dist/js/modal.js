@@ -42,28 +42,18 @@ export const handleCartChange = (e) => {
   updateTotalPrice();
 };
 
-// const updateTotalPrice = () => {
-//   const totalPriceElement = document.querySelector(".total__price-js");
-//   const cartIconQtyDisplay = document.querySelectorAll(
-//     ".small-circle-quantity"
-//   );
-//   let total = 0;
-//   let totalQty = 0;
-//   cartArr.forEach((item) => {
-//     total += item.productQty * item.productPrice;
-//     totalQty += item.productQty;
-//   });
-//   totalPriceElement.innerText = total.toFixed(2);
-//   cartIconQtyDisplay.forEach((el) => (el.innerText = totalQty));
-// };
-
 export const removeProductBtnClicked = (e) => {
   let btnId = e.target.id;
-  console.log(btnId);
   for (let i = cartArr.length - 1; i >= 0; i--) {
     if (cartArr[i].productId === btnId) {
       cartArr.splice(i, 1);
+      displayCart();
     }
   }
+};
+
+export const clearCartAfterPurchase = () => {
+  cartArr.length = 0;
   displayCart();
+  alert("Thank you for your purchase!");
 };

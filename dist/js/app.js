@@ -9,6 +9,7 @@ import {
   pressEscToCloseCart,
   handleCartChange,
   removeProductBtnClicked,
+  clearCartAfterPurchase,
 } from "./modal.js";
 
 // Wait until DOM is loaded before starting app
@@ -44,4 +45,7 @@ function initApp() {
   // Removes item from cart
   const products = document.querySelector(".products-js");
   products.addEventListener("click", removeProductBtnClicked);
+  // clear cart when purchase btn is clicked
+  const purchaseBtn = document.querySelector(".purchase-js");
+  purchaseBtn.addEventListener("click", clearCartAfterPurchase);
 }
