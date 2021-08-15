@@ -39,3 +39,8 @@ section:nth-child(even) {
 h2 {
   margin-bottom: 2rem;
 }
+
+.no-scrolling {
+  overflow: hidden;
+  position: fixed;
+}
