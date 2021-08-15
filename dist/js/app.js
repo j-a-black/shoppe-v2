@@ -38,8 +38,10 @@ function initApp() {
   const overlay = document.querySelector(".overlay");
   overlay.addEventListener("click", closeShoppingCart);
   pressEscToCloseCart();
+  // listens for changes in input field
   const cartDisplay = document.querySelector(".products-js");
   cartDisplay.addEventListener("change", handleCartChange);
+  // Removes item from cart
   const products = document.querySelector(".products-js");
   products.addEventListener("click", removeProductBtnClicked);
 }

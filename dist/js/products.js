@@ -1,4 +1,5 @@
 import { cartArr } from "./data.js";
+import { displayCart } from "./displayCart.js";
 
 export const displayProductsInDOM = (data) => {
   let cards = document.querySelector(".cards");
@@ -63,6 +64,7 @@ let Item = function (
   this.productPrice = productPrice;
   this.productQty = productQty;
 };
+// Adding product to shopping cart
 const addToCartArr = (
   productId,
   productImageSrc,
@@ -84,53 +86,5 @@ const addToCartArr = (
 
     cartArr.push(item);
   }
-  displayCart(cartArr);
-};
-
-// helper func: updateCartDisplay
-const products = document.querySelector(".products-js");
-const displayCart = (arr) => {
-  let html = "";
-  arr.forEach((el) => {
-    html += `
-      <article id=${el.productId} class="modal__item">
-        <div class="modal__figure">
-          <img src="${el.productImageSrc}" alt="${el.productName}">
-        </div>
-        <div class="modal__body">
-          <span class="modal__product-name">${el.productName}</span>
-          <span class="modal__product-price">$${el.productPrice}</span>
-          <div class="modal__qty-btn-container">
-            <input class="modal__input-qty" type="number" value="${el.productQty}" min="1" max="50">
-            <span><button id=${el.productId} class="close-btn item-js">&times;</button></span>
-          </div>
-        </div>
-      </article>
-  `;
-  });
-
-  products.innerHTML = html;
-  const emptyCartMsg = document.querySelector(".cart-empty-message");
-  if (cartArr.length) {
-    emptyCartMsg.style.display = "none";
-  } else {
-    emptyCartMsg.style.display = "block";
-  }
-  console.log(cartArr);
-  updateTotalPrice();
-};
-
-const updateTotalPrice = () => {
-  const totalPriceElement = document.querySelector(".total__price-js");
-  const cartIconQtyDisplay = document.querySelectorAll(
-    ".small-circle-quantity"
-  );
-  let total = 0;
-  let totalQty = 0;
-  cartArr.forEach((item) => {
-    total += item.productQty * item.productPrice;
-    totalQty += item.productQty;
-  });
-  totalPriceElement.innerText = total.toFixed(2);
-  cartIconQtyDisplay.forEach((el) => (el.innerText = totalQty));
+  displayCart();
 };
